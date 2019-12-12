@@ -3,12 +3,13 @@ import matplotlib.pyplot as plt
 
 from src.loader import loadDataFiles
 from src.linalg import detrend, normalize, getFEOF, getEOF, getCovariance
-from src.plot import plotEigenvalues, plotPCA, plotEOF
+from src.plot import plotEigenvalues, plotPCA, plotEOF, plotDouble
 
 directory = "/Users/koymans/Documents/phd/code/forward/traces"
 
 if __name__ == "__main__":
 
+  # Load forward modelled data files
   datas = loadDataFiles(directory)
   means = detrend(datas)
 
@@ -23,5 +24,4 @@ if __name__ == "__main__":
   # Cutoff some non-important EOFs
   v = v[:,0:cutoff] 
 
-  plotEOF(v)
-  plotPCA(means, v)
+  plotDouble(importance, means, v)

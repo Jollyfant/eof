@@ -45,8 +45,12 @@ def detrend(array):
 
 def normalize(array):
 
-  CUTOFF = 0.999
+  CUTOFF = 0
 
   # Normalize
-  importance = np.cumsum(array / np.sum(array))
-  return np.argmax(importance > CUTOFF), importance
+  importance = array / np.sum(array)
+
+  if CUTOFF == 0:
+    return None, importance
+
+  return np.argmax(importance < CUTOFF), importance

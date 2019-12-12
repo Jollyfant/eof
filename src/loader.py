@@ -16,7 +16,7 @@ def loadDataFiles(directory):
   datas = list()
 
   # Load the files from disk
-  for file in sorted(files):
+  for file in sorted(files): 
  
     with open(file, "r") as infile:
       data = json.load(infile)
