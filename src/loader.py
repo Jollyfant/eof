@@ -1,5 +1,4 @@
 import os
-import json
 import numpy as np
 
 def loadDataFiles(directory):
@@ -17,10 +16,6 @@ def loadDataFiles(directory):
 
   # Load the files from disk
   for file in sorted(files): 
- 
-    with open(file, "r") as infile:
-      data = json.load(infile)
- 
-    datas.append(data["trace"])
+    datas.append(np.loadtxt(file))
 
   return np.array(datas)
