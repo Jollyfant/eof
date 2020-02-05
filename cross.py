@@ -13,6 +13,10 @@ if __name__ == "__main__":
   datas = loadDataFiles(directory)
   means = detrend(datas)
 
+  plt.scatter(means[0], means[-1])
+  plt.xlabel("Station 1 (g)")
+  plt.ylabel("Station 2 (g)")
+  plt.show()
   # Fast EOF using covariance matrix instead of SVD
   w, v = getFEOF(means)
 

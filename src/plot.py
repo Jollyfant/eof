@@ -11,6 +11,7 @@ def plotEigenvalues(eig):
   Plots relative importance of eigenvalues
   """
 
+  plt.title("EOF mode weights (eigenvalues)")
   plt.semilogy(eig)
   plt.scatter(np.arange(len(eig)), eig)
   plt.show()
