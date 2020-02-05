@@ -5,7 +5,7 @@ from src.loader import loadDataFiles
 from src.linalg import detrend, normalize, getFEOF, getEOF, getCovariance
 from src.plot import plotEigenvalues, plotDouble
 
-directory = "/Users/koymans/Documents/phd/code/forward/traces"
+directory = "forward/traces"
 
 if __name__ == "__main__":
 
